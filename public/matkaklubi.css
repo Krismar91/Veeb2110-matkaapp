@@ -1,0 +1,150 @@
+.paisSektsioon {
+    height: 778px;
+    width: 100%;
+    background-image: url('assets/Hills.png');
+    background-size: cover;
+    background-repeat: none;   
+}
+
+.paislogo {
+    width: 70px;
+    height: 70px;
+}
+
+.paisNimi {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    width: 126px;
+    padding-left: 5px;
+    line-height: 30px;
+    padding-top: 5px;
+}
+
+.paisMenyy ul {
+    font-family: 'Montserrat', sans-serif;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    margin: 0%;
+    padding: 0;
+}
+
+.paisMenyy ul li {
+    margin-left: 10px;
+}
+@media screen and (min-width: 700px) {
+    .paisMenyy ul {
+        justify-content: flex-end;
+    }
+    
+    .paisMenyy ul li {
+        margin-left: 10px;
+    }
+
+
+
+}
+@media screen and (min-width: 1400px) {
+    .paisSektsioon {
+        background-image: url('assets/Hills@2x.png');
+        background-size: cover;
+        background-repeat: none;
+    }   
+}
+
+/* esileht */
+.rida {
+    padding-left: 65px;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.paisSektsioon-pealkirjad {
+    padding-top: 20px;
+}
+
+.paisSektsioon-pealkirjad h1,
+.paisSektsioon-pealkirjad h2,
+.paisSektsioon-pealkirjad h3 {
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+
+}
+
+@media screen and (min-width: 992px) {
+    .paisSektsioon-pealkirjad {
+        padding-top: 231px;
+        font-weight: 700;
+    }
+}
+
+.paisSektsioon-pealkirjad h2 {
+    font-size: 39.57px;
+    line-height: 42.74px;
+}
+
+.paisSektsioon-pealkirjad h1 {
+    font-size: 74.39px;
+    line-height: 91px;
+}
+
+.paisSektsioon-pealkirjad h3 {
+    font-size: 20.83px;
+    line-height: 29.17px;
+}
+
+.liblikas2 {
+    width: 60px;
+    height: 32px;
+    margin-left: -60px;
+}
+
+.liblikas1 {
+    width: 75.27px;
+    height: 66.04px;
+    margin-left: 140px;
+    margin-top: -60px;
+    
+}
+
+.pealispilt {
+    overflow: hidden;
+}
+
+.pealispilt .matkaja {
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+
+}
+
+.pealispilt .vari {
+    width: 751px;
+    height: 87px;
+    margin-top: -40px;
+    margin-right: -172px;
+}
+
+@media screen and (min-width: 1200px) { 
+    .container, .container-lg, .container-md, .container-sm, .container-xl { 
+        max-width: 95%;
+    }
+}
+
+.nupp-matkad {
+    background-color:#0B0B0B;
+    color: white;
+    border: none;
+    display: inline-block;
+    margin-left: 68px;
+    margin-top: 30px;
+    font-size: 16.5px;
+    height: 58px;
+    width: 247px;
+    font-family: 'Montserrat', sans-serif;
+}
