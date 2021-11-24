@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="matkaklubi.css">
+</head>
+
+<body>
+    <div class="paisSektsioon">
+        <div class="container">
+            <%- include("../partials/menyy.ejs") %>
+
+
+        <div class="row">
+            <div class="col-12 col-lg-6 paisSektsioon-pealkirjad">
+                <div class="teavitus">
+                    <h2>Kontakt</h2>
+                    <div>
+                        <div class="sisu-teade">Kirjuta meile</div>
+                    </div>
+                    <form action="">
+                        <div>
+                            <label for="nimi">Nimi:</label>
+                            <input type="text" name="nimi" placeholder="Nimi" id="nimi">
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" placeholder="Email" id="email">
+                        </div>
+                        <div>
+                            <label for="teade">Sõnum</label>
+                            <textarea name="teade" id="teade" cols="35" rows="8" placeholder="Teade">Kirjuta siia</textarea>
+                            <button onclick="kontakt()">Saada</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="kontakt.js"></script>
+</body>
+
+</html>

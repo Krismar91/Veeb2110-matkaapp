@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,61 +10,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="matkaklubi.css">
+    <link rel="stylesheet" href="/matkaklubi.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="paisSektsioon">
         <div class="container">
-          <div class="row pt-1">
-              <div class="col-md-5 d-flex">
-                  <img class="paislogo" src="./assets/klubilogo.png" alt="">
-                  <div class="paisNimi">
-                      MATKA KLUBI
-                  </div>
-              </div>
-              <div class="col-md-7">
-                  <div class="paisMenyy">
-                      <ul>
-                          <li><a href="#"></a>ESILEHT</li>
-                          <li><a href="#"></a>UUDISED</li>
-                          <li><a href="#"></a>MATKAD</li>
-                          <li><a href="#"></a>KONTAKT</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>  
+            <%- include ("../partials/menyy.ejs") %>
+                <div class="row">
+                    <div class="col-12 col-lg-6 paisSektsioon-pealkirjad">
+                        <div class="rida">
+                            <h2>Matkaklubi</h2>
+                            <img src="./assets/Butterfly1.png" class="liblikas1" alt="">
+                        </div>
+                        <div class="rida">
+                            <img src="./assets/Butterfly2.png" class="liblikas2" alt="">
+                            <h1>Värske õhk</h1>
+                        </div>
+                        <div class="rida">
+                            <h3>Tule õue ja Naudi eesti loodust iga ilmaga</h3>
+                        </div>
+                        <div>
+                            <button type="button" class="nupp-matkad">VAATA MATKASID</button>
+                        </div>
+                    </div>
+                    <div class="d-none d-lg-block col-lg-6 pealispilt">
+                        <img class="matkaja" src="./assets/Image.png" alt="">
+                        <img class="vari" src="./assets/vari.png" alt="">
+                    </div>
+                </div>
         </div>
-            <div class="row">
-                <div class="col-12 col-lg-6 paisSektsioon-pealkirjad">
-                    <div class="rida">
-                        <h2>Matkaklubi</h2>
-                        <img src="./assets/Butterfly1.png" class="liblikas1" alt="">
-                    </div>
-                    <div class="rida">
-                        <img src="./assets/Butterfly2.png" class="liblikas2" alt="">
-                        <h1>Värske õhk</h1>
-                    </div>
-                    <div class="rida">
-                        <h3>Tule õue ja Naudi eesti loodust iga ilmaga</h3>
-                    </div>
-                    <div>
-                        <button type="button"class="nupp-matkad">VAATA MATKASID</button>
-                    </div>
-                </div>
-                <div class="d-none d-lg-block col-lg-6 pealispilt">
-                    <img class="matkaja" src="./assets/Image.png" alt="">
-                    <img class="vari" src="./assets/vari.png" alt="">
-                </div>
-            </div>
-
     </div>
-
-    <div class="matkadeSektsioon">
-
+    <div class="matkaseSektsioon">
+        <div class="matkadKonteiner row">
+            <% for (let i = 0; i < matkad.length; i++) { %>
+                <div class="col-md-4 card">
+                    <img class="card-img-top" src="<%= matkad[i].pildiURL %>" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title"><%= matkad[i].nimetus %></h4>
+                      <p class="card-text"><%= matkad[i].kirjeldus %></p>
+                      <a href="#" class="btn btn-primary">Registreeri</a>
+                    </div>
+                  </div>
+            <% } %>
+        </div>
     </div>
-    
 </body>
+
 </html>

@@ -110,6 +110,16 @@
     
 }
 
+img.registreerumine-pilt {
+    width: 35%;
+    object-fit: cover;
+}
+
+img.uudis-pilt {
+    width: 35%;
+    object-fit: cover;
+}
+
 .pealispilt {
     overflow: hidden;
 }
@@ -136,6 +146,14 @@
     }
 }
 
+/* teavitus */
+.teavitus {
+    margin-left: 440px;
+    margin-top: -150px;
+    
+}
+
+
 .nupp-matkad {
     background-color:#0B0B0B;
     color: white;
@@ -148,3 +166,13 @@
     width: 247px;
     font-family: 'Montserrat', sans-serif;
 }
+
+.matkadKonteiner {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+}
+
+.matkad {
+    display: flex;
+}
+
