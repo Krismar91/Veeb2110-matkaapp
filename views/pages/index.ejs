@@ -52,7 +52,10 @@
                     <div class="card-body">
                       <h4 class="card-title"><%= matkad[i].nimetus %></h4>
                       <p class="card-text"><%= matkad[i].kirjeldus %></p>
-                      <a href="#" class="btn btn-primary">Registreeri</a>
+                      <p>
+                          Registreerunud osalejad: <%= matkad[i].osalejad.length %>
+                      </p>
+                      <a href="/registreerumine/<%= i %>" class="btn btn-primary">Registreeru</a>
                     </div>
                   </div>
             <% } %>

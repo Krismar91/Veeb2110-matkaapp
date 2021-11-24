@@ -27,7 +27,7 @@
                 <%= matk.kirjeldus %>
             </p>
         <div class="row">
-                    <form action="/kinnitus/<%= matk.matkaId %>">
+                    <form action="/kinnitus/<%= matk.id %>">
                         <div>
                             <label for="nimi">Nimi</label>
                             <input type="text" name="nimi" placeholder="Nimi" id="nimi">
@@ -37,7 +37,7 @@
                             <input type="text" name="email" placeholder="Email" id="email">
                         </div>
                         <div>
-                            <textarea name="teade" id="teade" cols="35" rows="8" placeholder="Teade">Sõnum</textarea>
+                            <textarea name="teade" id="teade" cols="35" rows="8" placeholder="Teade"></textarea>
                             <button onclick="kontakt()">Saada</button>
                         </div>
                     </form>
