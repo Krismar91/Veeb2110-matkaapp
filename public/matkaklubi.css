@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 .paisSektsioon {
     height: 778px;
     width: 100%;
@@ -34,6 +39,12 @@
 .paisMenyy ul li {
     margin-left: 10px;
 }
+
+a {
+    color: #0B0B0B;
+}
+
+
 @media screen and (min-width: 700px) {
     .paisMenyy ul {
         justify-content: flex-end;
@@ -120,6 +131,10 @@ img.uudis-pilt {
     object-fit: cover;
 }
 
+img.pildiURL {
+    height: 35%;
+}
+
 .pealispilt {
     overflow: hidden;
 }
@@ -146,13 +161,6 @@ img.uudis-pilt {
     }
 }
 
-/* teavitus */
-.teavitus {
-    margin-left: 440px;
-    margin-top: -150px;
-    
-}
-
 
 .nupp-matkad {
     background-color:#0B0B0B;
@@ -167,12 +175,82 @@ img.uudis-pilt {
     font-family: 'Montserrat', sans-serif;
 }
 
+.matkadeSektsioon {
+    margin-top: 60px;
+}
+
 .matkadKonteiner {
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    margin-top: 15px;
+}
+
+.matkadKonteiner img {
+    margin-top: 8px;
+    height: 35%;
 }
 
 .matkad {
     display: flex;
+    align-items: center;
+}
+
+.matkKonteiner img {
+    width: 50%;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.matkKonteiner {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.matkKirjeldus {
+    word-wrap: break-word;
+    width: 370px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Uudised */
+.uudisedPealkiri {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.uudisedKonteiner {
+    padding-top: 50px;
+}
+
+.uudisedKonteiner .card {
+    padding-top: 15px;
+    margin-top: 15;
+}
+
+/* kontakt */
+.kontaktKonteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    }
+    
+.teade {
+    margin-top: 20px;
+}
+
+.teade-nimi {
+    margin-top: 35px;
+}
+
+.teade-email {
+    margin-top: 5px;
+}
+
+.teade-nupp {
+    padding-left: 5px;
 }
 

@@ -12,7 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="matkaklubi.css">
+        <link rel="stylesheet" href="/matkaklubi.css">
     </head>
     
 <body>
@@ -20,7 +20,7 @@
             <div class="container">
                 <%- include("../partials/menyy.ejs") %>
 
-                <h1>UUDISED</h1>
+                <div class="uudisedPealkiri"><h1>UUDISED</h1></div>
 
                 <div class="uudisedKonteiner row">
                         <% for (let i = 0; i < uudised.length; i++) { %>
