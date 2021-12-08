@@ -115,6 +115,78 @@ function naitaUudist(req, res) {
     res.render("pages/uudis", { uudis } )
 }
 
+async function lisaUudis(req, res) {
+    const uusUudis = {
+        pealkiri: req.body.pealkiri,
+        kokkuvote: req.body.kokkuvote,
+        uudistekst: req.body.uudistekst,
+        uudispilt: req.body.uudispilt
+    }
+
+    await client.connect()
+    const database = client.db(andmebaas)
+    const uudisedCollection = database.collection("uudised")
+    const tulemus = await uudisedCollection.insertOne(uusUudis)
+    uusUudis.id = tulemus.insertedId
+    uudised.push(uusUudis)
+    res.send(uusUudis)
+}
+
+async function lisaMatk(req, res) {
+    const uusMatk = {
+        nimetus: req.body.nimetus,
+        pildiUrl: req.body.pildiUrl,
+        kirjeldus: req.body.kirjeldus,
+        osalejad: [],
+        kasNahtav: req.body.kasNahtav,
+        kasRegistreerumineAvatud: req.body.kasRegistreerumineAvatud
+    }
+
+    await client.connect()
+    const database = client.db(andmebaas)
+    const matkadCollection = database.collection("matk")
+    const tulemus = await matkadCollection.insertOne(uusMatk)
+    uusMatk.id = matkad.length
+    matkad.push(uusMatk)
+    res.send(uusMatk)
+}
+
+async function loeMatkad() {
+    await client.connect()
+    const database = client.db(andmebaas)
+    const matkadCollection = database.collection("matk")
+    const andmed = await matkadCollection.find().toArray
+    for (i in andmed) {
+        const matk = andmed[i]
+        matk.id = matkad.length
+        matkad.push(matk)
+    }
+    console.log("matkad loetud")
+}
+
+
+
+
+
+
+async function loeUudised() {
+    await client.connect()
+    const database = client.db(andmebaas)
+    const uudisedCollection = database.collection("uudised")
+    const andmed = await uudisedCollection.find().toArray
+    for (i in andmed) {
+        const uudis = andmed[i]
+        uudis.id = uudised.length
+        uudised.push(uudis)
+    }
+    console.log("uudised loetud")
+}
+
+function tagastaUudised(req, res) {
+    res.send(uudised)
+}
+
+
 function matkNahtav(matk) {
     return matk.kasNahtav
 }
@@ -128,9 +200,7 @@ function tagastaMatkad(req, res) {
     res.send(matkad)
 }
 
-function tagastaUudised(req, res) {
-    res.send(uudised)
-}
+
 
 function muudaMatka(req, res) {
     const matk = matkad[req.params.matkaId]
@@ -168,6 +238,9 @@ function muudaUudist(req, res) {
     res.send(uudis)
 }
 
+
+
+
 async function loeRegistreerumised(matkId) {
     await client.connect()
     const database = client.db(andmebaas)
@@ -199,19 +272,27 @@ async function lisaOsalejadMatkadele() {
 
 const app = express()
 lisaOsalejadMatkadele()
+loeUudised()
+loeMatkad()
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', naitaMatkad)
 app.get('/kontakt', (req, res) => res.render('pages/kontakt', ))
 app.get('/uudised', (req, res) => res.render('pages/uudised', {uudised} ))
-app.get('/registreerumine/:matkaId', (req, res) => res.render('pages/registreerumine', {matk: matkad[req.params.matkaId]} ));
+app.get('/registreerumine/:matkaId', 
+(req, res) => res.render('pages/registreerumine', 
+{matk: matkad[req.params.matkaId]} ));
+
 app.get("/kinnitus/:matkaId", registreerumiseKinnitus)
 app.get("/uudis/:uudisIndex", naitaUudist)
 app.get("/matk/:matkIndex", naitaMatk)
 app.get("/api/matk", tagastaMatkad)
-app.get("/api/uudis", tagastaUudised) 
+app.get("/api/uudis", tagastaUudised)
+app.post("/api/uudis", lisaUudis)
+app.post("/api/matk", lisaMatk)
 app.get("/api/matk/:matkaId/muuda", muudaMatka)
 app.get("/api/uudis/:uudisIndex/muuda", muudaUudist)
 app.get("/api/registreerumised", tagastaRegistreerumised)

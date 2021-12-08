@@ -9,6 +9,7 @@ async function loeUudised() {
     naitaUudisteMenyyd(andmed)
 }
 
+
 async function muudaUudist(uudisIndex) {
     const pealkiri = document.getElementById("uudis-pealkiri").value
 
@@ -19,6 +20,7 @@ async function muudaUudist(uudisIndex) {
     naitaPealkiri(uudisIndex)
 
 }
+
 
 function naitaUudisteMenyyd(uudised) {
     let vastus = ''
